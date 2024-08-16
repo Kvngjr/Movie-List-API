@@ -19,6 +19,8 @@ from app.logger import get_logger
 logger = get_logger(__name__)
 
 
+
+
 sentry_sdk.init(
     dsn="https://1313ea9c5f985d00926b066b2fbace17@o4507780871618560.ingest.us.sentry.io/4507780873388032",
     # Set traces_sample_rate to 1.0 to capture 100%
@@ -35,7 +37,9 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 
-
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Movie Listing API"}
 # User's Routes
 
 @app.post("/signup", response_model=schema.User)
