@@ -7,7 +7,7 @@ services:
     environment:
       - POSTGRES_DB= Movielists
       - POSTGRES_USER= postgres
-      - POSTGRES_PASSWORD= Tommy%40_0205
+      - POSTGRES_PASSWORD= Tommy@_0205
     container_name: postgres_db
     ports:
       - "5432:5432"
